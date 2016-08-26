@@ -9,6 +9,7 @@
 # startup
 - Start MongoDB `./mongod`
 - Run with `ruby app.rb -o $IP -p $PORT`
+- RARMS can be run from Cloud9 via https://c9.io/laurencetimms/rarms
 
 ## todo
 - create test suite
