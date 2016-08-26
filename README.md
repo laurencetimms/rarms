@@ -1,35 +1,23 @@
-#Sinatra Firebase Microboiler
-<img src="https://www.herokucdn.com/deploy/button.svg">
+# RARMS - Rest Api with Ruby, MongoDB and Sinatra
 
-Sinatra Firebase Microboiler is some super simple [Sinatra](http://www.sinatrarb.com/) 
-boilerplate wired up with [Firebase](http://www.firebase.com/) and some other goodies. 
-It provides some basic routing and Firebase helpers and examples.
+# design decisions
+- Rails MVC framework discarded as being too heavyweight for the needs of this API
+- Sinatra chosen as a lightweight, fast-loading framework suitable for a JSON REST API
+- MongoDB selected with support from the Mongoid gem for ODM solution
+- Firebase considered as an alternative dynamic JSON/HTTP persistence solution 
 
-Great for prototyping, hackathons, or just getting an app/API up and running quickly.
+# startup
+- Start MongoDB `./mongod`
+- Run with `ruby app.rb -o $IP -p $PORT`
 
+## todo
+- create test suite
+- create Rakefile
+- add api metering & usage scheduling
+- harden (owasp) + deep pen test + schedule regular pen test 
+- secure the database
+- dynamic config: switch between production and dev databases based on host url
+- embed metrics across the api and ruby vm (ie metrics-jvm-jars + new relic)
 
-
-#Quickstart
-- Install [Ruby](https://www.ruby-lang.org/en/) & [Bundler](http://bundler.io/) <i>(Check gemfile)</i>
-- <code>bundle install</code>
-- Set your Firebase URL in <code>app.rb</code> and <code>public/js/scripts.js</code>
-- Start your server with <code>ruby app.rb</code>
-- Deployable to Heroku
-
-
-
-*Nitrous*: <code>ruby app.rb -p 3000 -o 0.0.0.0</code>
-
-*Cloud9*: <code>ruby app.rb -p $PORT -o $IP</code>
-
-
-
-#Includes
-- [Sinatra](http://www.sinatrarb.com/)
-- [Firebase](https://github.com/oscardelben/firebase-ruby)
-- [Sanitize](https://github.com/rgrove/sanitize)
-- [Normalize](https://necolas.github.io/normalize.css/)
-- [Modernizer](https://modernizr.com/)
-- [Jquery](https://jquery.com/)
-- [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
-- [Open Sans](https://www.google.com/fonts/specimen/Open+Sans)
+# thanks
+- originally cloned from bananatron/sinatra-firebase and then extensively modified
