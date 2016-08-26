@@ -103,7 +103,7 @@ end
 # delete user by username
 delete '/users/:username' do |username|
   body = JSON.parse request.body.read
-  if body['secretkey'].nil?
+  if body['secretkey']!='foobarsecretkey'
     halt 404
   end
   user.destroy if user
